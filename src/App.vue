@@ -9,18 +9,17 @@
                 <div class="col-md-12">
                     <ul class="nav nav-tabs nav-fill">
                         <li class="nav-item">
-                            <a class="nav-link active" @click="onListClick">Liste</a>
+                            <router-link to="/machines" class="nav-link">Liste</router-link>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" @click="onMapClick">Carte</a>
+                            <router-link to="/map" class="nav-link">Map</router-link>
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <List></List>
-                    <Map></Map>
+                    <router-view class="tabs-container"></router-view>
                 </div>
             </div>
         </div>
@@ -28,28 +27,22 @@
 </template>
 
 <script>
-    import List from './components/MachinesList.vue'
-    import Map from './components/MachinesMap.vue'
-
     export default {
         name: 'app',
         data() {
             return {
-                msg: 'Coffee Machine Vader'
+                msg: 'Coffee Machine Vader',
+                isActive: {
+                    list: false,
+                    map: false
+                }
             }
         },
         methods: {
-            onListClick: function () {
-                alert('Vous avez cliqué sur liste')
-            },
-            onMapClick: function () {
-                alert('Vous avez cliqué sur map');
+            active: function (link) {
+                console.log(link)
             }
         },
-        components: {
-            List,
-            Map
-        }
     }
 </script>
 
@@ -67,6 +60,13 @@
         width: 200px;
         height: 200px;
     }
+    .tabs-container {
+        border-bottom-left-radius: .25rem;
+        border-bottom-right-radius: .25rem;
+        border: 1px solid transparent;
+        border-color: transparent #dee2e6 #dee2e6 #dee2e6;
+    }
+
 
     h1, h2 {
         font-weight: normal;
@@ -76,6 +76,10 @@
 
     h1 {
         color: #53240f;
+    }
+
+    a {
+        color: chocolate;
     }
 
     h2 {
@@ -90,9 +94,5 @@
     li {
         display: inline-block;
         margin: 0 10px;
-    }
-
-    a {
-        color: #42b983;
     }
 </style>

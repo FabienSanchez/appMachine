@@ -19,56 +19,11 @@
 
     git init
 
-
-### 2.
-
-Dans un premier temps, nous voulons changer l'écran d'accueil, ce dernier permettra à l'agent de maintenance de choisir entre consulter la liste des machines ou afficher la carte.
-
-Faites les modifications nécessaires, voici à titre d'exemple un rendu possible :
-
-![](images/step1.png)
-
-* Ajoutez dans votre composant App deux méthodes : `onMachinesListClick` et `onMapClick` qui devront faire des [alertes](https://developer.mozilla.org/fr/docs/Web/API/Window/alert) pour marquer le fait qu'un utilisateur a cliqué dessus.
-
-
-### 3) Préparation des écrans.
-
-Nous voulons préparer les écrans de la liste des machines ainsi que celui des cartes. En VueJs tout est composant, si nous voulons un nouvel écran, il nous fait un nouveau composant.
-
-* Créez donc deux fichiers `MachinesList.vue` et `MachinesMap.vue`, les templates de ces composants seront très simples dans un premier temps, par exemple un simple titre h1 avec 'Liste des machines' ou 'Carte des machines' est suffisant.
-
-* Faites en sorte d'ajouter ces deux composants Vue au template de votre app.
-
-Votre page doit ressembler à ceci :
-
-![](images/step2.png)
-
-➡️**Commiter dans git avec un message explicite, par exemple 'fin étape 3' ou même "Ajout composants MachinesList et MachinesMap"**
-
-
-### 4) Mise en place d'un routeur.
-
-Le problème est que nous ne voulons pas avoir une seule page sur notre application. 
-Nous devons avoir la possibilité de naviguer d'une page à l'autre, sans recharger la page ou sans afficher une nouvelle page html, nous avons besoin de mettre en place un routeur.
-
-C'est la même chose que Laravel, sauf qu'ici le routeur est côté client, nous devons définir nos routes côté client et avoir moyen d'en changer.
-
-Cela tombe bien, Vue a un routeur tout prêt que nous allons utiliser, [vue-router](https://router.vuejs.org/fr/)
-
-
-##### 4.1) Installation.
-
-Faites l'installation avec npm comme décrite dans la documentation. N'oublier pas d'ajouter après l'installation ces deux lignes :
-
-```
-import VueRouter from 'vue-router'
-
-Vue.use(VueRouter)
-```
+### 4.
 
 **Question :** quelle est la différence entre `npm install vue-router` et `npm install --save vue-router` ? Laquelle est à privilégier ici ?
 
-**Votre réponse :**
+    L'une installe simplement, l'autre met a joue le package.json
 
 ##### 4.2) Configuration.
 
