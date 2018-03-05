@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img src="http://vuejs.org/images/logo.png">
+    <img src="https://cdn.pixabay.com/photo/2014/11/27/12/24/coffee-547490_960_720.png">
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
     <ul>
